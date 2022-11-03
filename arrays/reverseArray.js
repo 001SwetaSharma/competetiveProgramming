@@ -15,6 +15,8 @@ process.stdin.on('data', function(chunk){
 	inputArr += chunk;
 });
 
+//1st approach
+//traverse and get the reverse of the array and the time complexity will be O(n)
 process.stdin.on('end',function(){
 	let revArr = [];
 	inputArr = inputArr.split('\n');
@@ -24,3 +26,15 @@ process.stdin.on('end',function(){
 
 	console.log(`For revArr.....:: ${revArr}`);
 });
+
+
+//2nd approach
+//iterate through half of the array which will have the time complexity of O(n/2)
+
+let revArr = [],temp, j=inputArr.length-1;
+for(i=0;i<Math.floor(inputArr.length/2);i++){
+    temp = inputArr[i];
+    inputArr[i] = inputArr[j];
+    inputArr[j] = temp;
+    --j;
+}

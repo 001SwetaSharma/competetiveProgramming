@@ -15,7 +15,9 @@ process.stdin.on('end',function(){
     inputArr = inputArr.sort(function(a,b){ return a-b; });
 
 
-    //2nd approach
+    //2nd approach :: 2-pointer approach
+    //time comlexity O(n/2)
+    // space complexity = O(1)
     let j=inputArr.length-1,temp;
     for(let i=0;i<Math.floor(inputArr.length/2);){
         if(inputArr[i]<0 && inputArr[j]<0){

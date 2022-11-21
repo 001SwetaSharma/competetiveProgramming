@@ -10,8 +10,14 @@ while(i<inputArr1.length || j<inputArr2.length){
         if(inputArr1[i] == inputArr2[j]){
             unionArray.push(inputArr1[i]);
         }else{
-            unionArray.push(inputArr1[i]);
-            unionArray.push(inputArr2[j]);
+            if(inputArr1[i]>inputArr2[j]){
+                unionArray.push(inputArr2[j]);
+                unionArray.push(inputArr1[i]);
+            }else{
+                unionArray.push(inputArr1[i]);
+                unionArray.push(inputArr2[j]);
+            }
+            
         }
         ++i;
         ++j;

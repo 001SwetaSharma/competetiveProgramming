@@ -2,13 +2,14 @@
 
 let inputArr1 = [-1,2,4,7,9];
 let inputArr2 = [0,2,5];
-let i=0,j=0,unionArray=[];
+let i=0,j=0,unionArray=[],intersectionArray = [];
 
 //Union
 while(i<inputArr1.length || j<inputArr2.length){
     if(i<inputArr1.length && j<inputArr2.length){
         if(inputArr1[i] == inputArr2[j]){
             unionArray.push(inputArr1[i]);
+            intersectionArray.push(inputArr1[i]);
         }else{
             if(inputArr1[i]>inputArr2[j]){
                 unionArray.push(inputArr2[j]);
@@ -30,3 +31,6 @@ while(i<inputArr1.length || j<inputArr2.length){
     }
     
 }
+
+console.log(`Union Array............::${JSON.stringify(unionArray)}`);
+console.log(`Intersection Array............::${JSON.stringify(intersectionArray)}`);

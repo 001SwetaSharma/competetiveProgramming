@@ -11,7 +11,6 @@ process.stdin.on('end',function(){
     inputArr = inputArr.split('\n');
     let kthEle = parseInt(inputArr[0]);
     
-    
     //1st approach
     // sort and find the kth max and min ele
     // Time complexity will be O(nlogn) as sort uses tim sort algorithm to sort the array.

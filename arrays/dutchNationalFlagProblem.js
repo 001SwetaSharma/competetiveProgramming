@@ -1,3 +1,4 @@
+
 //sort the array without using sort function
 
 let inputArr = [0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1];
@@ -30,6 +31,8 @@ for(let i=0;i<hashTable[2];i++){
 
 
 //2nd approach
+//time complexity is O(n)
+//space complexity is O(1)
 let lo = 0, mid = 0, high = inputArr.length-1, temp = 0;
 while(mid<=high){
     if(inputArr[mid] == 0){

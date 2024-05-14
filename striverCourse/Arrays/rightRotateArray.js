@@ -30,9 +30,7 @@ console.log('Printing rotated array :: ', JSON.stringify(arr));
 arr = [1,2,3,4,5,6,7];
 // APPROACH - 2 - OPTIMAL APPROACH
 reverseArray(arr, n-d, n-1);
-//console.log('reverse array...1', arr);
 reverseArray(arr, 0, n-d-1);
-//console.log('reverse array...2', arr);
 reverseArray(arr, 0, n-1);
 
 function reverseArray(arr, first, last) {

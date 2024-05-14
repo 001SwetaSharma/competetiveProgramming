@@ -1,4 +1,5 @@
 let arr = [1,2,3,4,5,6,7], d = 3;
+//output = [4,5,6,7,1,2,3]
 
 //Approach -1 [Brute Force Approach]
 // If the rotation number(d) is equal to the size of the array then always the resultant will be same as the input.
@@ -46,4 +47,33 @@ for(let i=n-d; i<n; i++) {
     arr[i] = temp[i-(n-d)];
 }
 
+// Time complexity
+// O(d) + O(n-d) + O(d) = O(n+d)
+// Extra space = O(d), temp array is being used to store the d elements
 console.log('Rotated Array..::', JSON.stringify(arr));
+
+
+
+// Approach - 2 [Optimal Solution]
+// reverse (arr, arr+d) = reverse first d elements = [3,2,1,4,5,6,7]
+// reverse (arr+d, arr+n) = reverse the remaining last n-d elements = [3,2,1,7,6,5,4]
+// reverse the whole arr(arr, arr+n) = [4,5,6,7,1,2,3] = is the output
+// time complexity = O(d) + O(n-d) + O(n) = O(2n)
+// extra space complexity = O(1)
+
+arr = [1,2,3,4,5,6,7];
+reverseArray(0, d-1);
+reverseArray(d, n-1);
+reverseArray(0, n-1);
+
+function reverseArray(first, last) {
+    while(first < last) {
+        let temp = arr[first];
+        arr[first] = arr[last];
+        arr[last] = temp;
+        first++;
+        last--;
+    }
+}
+
+console.log('Rotated Array..Final::', JSON.stringify(arr));

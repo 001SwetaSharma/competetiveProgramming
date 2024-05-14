@@ -12,12 +12,17 @@ console.log('for max....', max);
 
 // APPROACH - 2 (get the gcd / hcd by iteration till the sq root of the smallest no)
 // TC will be logarithmic => Math.sqrt(Math.min(a,b))
+// math.sqrt because whatever the divisors before sq root will have a larger number which is after sq root, so no need of looping
+// through entire numbers, rather loop till sq root and check for both the divisors.
+// div1 * div2 = number
+// div2 = number/div1
 max = 0;
 let num = Math.sqrt(Math.min(a,b));
 for(let i = 1; i<=num; i++) {
     if (a%i === 0 && b % i === 0) {
         max = i;
 
+        // div2 = number/div1 [checking if div2 is dividig both a & b or not, if it is and if > max then max = div2]
         if(a%(num/i)===0 && b%(num/i)===0 && (num/i)>max) {
             max = num/i;
         }

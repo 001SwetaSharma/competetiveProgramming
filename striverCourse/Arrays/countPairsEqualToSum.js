@@ -10,6 +10,7 @@ for(let i=0; i<n; i++) {
     hashMap.set(arr[i], (hashMap.get(arr[i]) || 0)+1);
 }
 console.log('Count..........', count);
+
 //TC = O(n)
 //SC = O(logn)
 
@@ -26,8 +27,7 @@ count should become 2.... same goes for 3rd element, count will become 3. as fir
 It cannot happen reverse as in (1,0)(2,0)(3,0) all these wont be countable because these are the same pairs and one pair will be 
 countable only once. so just increment the count of the element to the frequency it came, i.e. 5 is 3 times, make it 3 in hashMap.
 now for the 1st 1 all the combination with 3 5's will give count 3, here comes the 2nd 1, which will again combine with all the 3
-i.e(1,4)(2,4)(3,4) all these are valid pairs, because 1 came second time. so when 1 came 2nd time it will check for 5(6-1) and it
+5's i.e(1,4)(2,4)(3,4) all these are valid pairs, because 1 came second time. so when 1 came 2nd time it will check for 5(6-1) and it
 will see that there is already 5 which came 3 times. so it will increment the count with the 5 frequency which should be the case.
 because all 3 5's will form a pair with 2nd 1.
 */
-
